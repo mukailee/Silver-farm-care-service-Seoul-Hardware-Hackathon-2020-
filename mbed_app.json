@@ -1,0 +1,89 @@
+{
+    "target_overrides": {
+        "*": {
+            "target.network-default-interface-type"     : "CELLULAR",
+            "platform.stdio-baud-rate"                  : 115200,
+            "platform.stdio-convert-newlines"           : true,
+            "mbed-trace.enable"                         : null,
+            "target.features_add"                       : ["LWIP"],
+            "lwip.ipv4-enabled"                         : false,
+            "lwip.ipv6-enabled"                         : true,
+            "lwip.ethernet-enabled"                     : false,
+            "lwip.ppp-enabled"                          : false,
+            "lwip.tcp-enabled"                          : true,
+            "platform.default-serial-baud-rate"         : 115200,
+            "platform.stdio-buffered-serial"            : true,
+            "cellular.debug-at"                         : false,
+            "nsapi.default-cellular-plmn"               : 0,
+            "nsapi.default-cellular-sim-pin"            : "\"1234\"",
+            "nsapi.default-cellular-apn"                : "\"lte-internet.sktelecom.com\"",
+            "nsapi.default-cellular-username"           : 0,
+            "nsapi.default-cellular-password"           : 0,
+            "QUECTEL_BG96.tx"                           : "D1",
+            "QUECTEL_BG96.rx"                           : "D0",
+            "QUECTEL_BG96.provide-default"              : true
+        },
+        "K64F": {
+            "target.components_add"                     : ["SD"],
+            "device-management.flash-start-address"     : "0x0",
+            "device-management.flash-size"              : "(1024*1024)",
+            "device-management.sotp-section-1-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(4*1024))",
+            "device-management.sotp-section-1-size"     : "(4*1024)",
+            "device-management.sotp-section-2-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(4*1024))",
+            "device-management.sotp-section-2-size"     : "(4*1024)",
+            "update-client.application-details"         : "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"             : "(64*1024*1024)",
+            "update-client.storage-size"                : "(2*1024*1024)",
+            "update-client.storage-locations"           : "1",
+            "target.features_add"                       : ["BOOTLOADER"],
+            "target.bootloader_img"                     : "bootloader/mbed-bootloader-K64F.bin",
+            "target.header_offset"                      : "0x10000",
+            "target.app_offset"                         : "0x10400",
+            "button-pressed-state"                      : 0
+        },
+        "K66F": {
+            "target.components_add"                     : ["SD"],
+            "device-management.flash-start-address"     : "0x0",
+            "device-management.flash-size"              : "(2048*1024)",
+            "device-management.sotp-section-1-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(4*1024))",
+            "device-management.sotp-section-1-size"     : "(4*1024)",
+            "device-management.sotp-section-2-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(4*1024))",
+            "device-management.sotp-section-2-size"     : "(4*1024)",
+            "update-client.application-details"         : "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"             : "(64*1024*1024)",
+            "update-client.storage-size"                : "(2*1024*1024)",
+            "update-client.storage-locations"           : "1",
+            "target.features_add"                       : ["BOOTLOADER"],
+            "target.bootloader_img"                     : "bootloader/mbed-bootloader-K66F.bin",
+            "target.header_offset"                      : "0x10000",
+            "target.app_offset"                         : "0x10400",
+            "button-pressed-state"                      : 0
+        }
+    },
+    "config": {
+        "format-storage-layer-on-error": {
+            "help": "Whether to format the storage layer when it cannot be read - always disable for production devices!",
+            "value": 1
+        },
+        "main-stack-size": {
+            "value": 6000
+        },
+        "use-button": {
+            "help": "Whether the target has a button",
+            "macro_name": "USE_BUTTON",
+            "value": true
+        },
+        "button-pressed-state": {
+            "help": "Value of the button when pressed",
+            "value": 1
+        },
+        "no_led": {
+            "help": "This flag disables the heartbeat thread in tests. This is useful for platforms that don't have an LED or the LED is used for other functionality like LED on the SPI clockline etc",
+            "value": null
+        },
+        "tests-fs-size": {
+            "help": "Maximum size of the file system used for tests",
+            "value": null
+        }
+    }
+}
