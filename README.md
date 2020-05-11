@@ -1,6 +1,6 @@
 Silver-farm-care-service-Seoul-Hardware-Hackathon-2020-
 
-made by team 이웃사촌
+made by team 이웃사촌(이준민,황정준,김진구,이민영)
 
 - 2020/01/04~05 진행된 서울 하드웨어 해커톤에서 우수상 수상
 
